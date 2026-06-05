@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment variables (VERY IMPORTANT)
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Vite / React cache
+.vite/
+
+# Optional: coverage (if you use tests)
+coverage/
