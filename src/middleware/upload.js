@@ -3,8 +3,7 @@ const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 console.log(
-  "multer-storage-cloudinary:",
-  cloudinaryStoragePackage
+  require("multer-storage-cloudinary")
 );
 
 const cloudinary = require("../config/cloudinary");
