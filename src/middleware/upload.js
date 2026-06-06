@@ -2,6 +2,11 @@ const multer = require("multer");
 
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
+console.log(
+  "multer-storage-cloudinary:",
+  cloudinaryStoragePackage
+);
+
 const cloudinary = require("../config/cloudinary");
 
 const storage = new CloudinaryStorage({
@@ -10,7 +15,7 @@ const storage = new CloudinaryStorage({
   params: {
     folder: "Mexi Medicals",
 
-    allowedFormats: ["jpg", "png", "jpeg"],
+    allowed_formats: ["jpg", "png", "jpeg"],
   },
 });
 
