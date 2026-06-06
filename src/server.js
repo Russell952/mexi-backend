@@ -16,7 +16,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://your-frontend.vercel.app",
+      "https://mexi-medicals.vercel.app/",
       "https://your-admin.vercel.app"
     ],
     credentials: true
