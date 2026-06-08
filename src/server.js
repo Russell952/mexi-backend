@@ -18,7 +18,7 @@ app.use(
       "http://localhost:5173",
       "http://localhost:4173",
       "https://mexi-medicals.vercel.app",
-      "https://your-admin.vercel.app"
+      "https://mexi-medicals-admin.vercel.app"
     ],
     credentials: true
   })
