@@ -1,7 +1,12 @@
 const multer = require("multer");
 
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const msc = require("multer-storage-cloudinary");
 const cloudinary = require("../config/cloudinary");
+
+console.log("multer-storage-cloudinary:", msc);
+console.log("type:", typeof msc);
+console.log("keys:", Object.keys(msc));
+const CloudinaryStorage = msc.CloudinaryStorage;
 
 const storage = new CloudinaryStorage({
   cloudinary,
