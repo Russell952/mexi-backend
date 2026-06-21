@@ -12,17 +12,20 @@ const orderRoutes = require("./routes/orderRoutes");
 const app = express(); // ✅ MUST COME BEFORE app.use
 
 // Middleware
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:4173",
-      "https://mexi-medicals.vercel.app",
-      "https://mexi-medicals-admin.vercel.app"
-    ],
-    credentials: true
-  })
-);
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:4173",
+    "https://mexi-medicals.vercel.app",
+    "https://mexi-medicals-admin.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 // Connect DB

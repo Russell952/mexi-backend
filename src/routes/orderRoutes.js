@@ -12,8 +12,10 @@ const { protect, adminOnly } = require("../middleware/authMiddleware");
 // USER
 router.post("/", protect, createOrder);
 router.get("/my", protect, getMyOrders);
+router.put("/:id", updateOrderStatus);
 
 // ADMIN
 router.get("/", protect, adminOnly, getAllOrders);
 
 module.exports = router;
+
