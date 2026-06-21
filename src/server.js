@@ -19,24 +19,16 @@ const allowedOrigins = [
   "https://mexi-medicals-admin.vercel.app",
 ];
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      console.log("Origin:", origin);
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.originalUrl}`);
+  console.log("Origin:", req.headers.origin);
+  next();
+});
 
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`Origin not allowed: ${origin}`));
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 
 app.use(express.json());
 
