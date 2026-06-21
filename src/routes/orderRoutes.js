@@ -4,7 +4,8 @@ const router = express.Router();
 const {
   createOrder,
   getMyOrders,
-  getAllOrders
+  getAllOrders,
+  updateOrderStatus
 } = require("../controllers/orderController");
 
 const { protect, adminOnly } = require("../middleware/authMiddleware");
