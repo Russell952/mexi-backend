@@ -21,7 +21,7 @@ exports.createProduct = async (req, res) => {
 
       category: req.body.category,
 
-      image: req.file.path
+      image: req.file.secure_url
 
     });
 
